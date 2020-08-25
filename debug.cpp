@@ -4,7 +4,10 @@
 #include <vector>
 using namespace std;
 int main() {
-    vector<int> a = {1, 2, 3, 4};
-    for (auto i : a)
-        cout << i << endl;
+    vector<vector<int> > a = {{1, 2}, {2, 3, 4}, {1, 3}};
+    for (auto i : a) {
+        for (auto j : i) {
+            cout << j << endl;
+        }
+    }
 }
