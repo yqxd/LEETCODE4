@@ -17,6 +17,7 @@
 // -10^5 <= nums[i] <= 10^5
 // 0 <= i <= j < nums.length
 
+#include <vector>
 class NumArray {
    public:
     NumArray(vector<int>& nums) {}
