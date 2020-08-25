@@ -17,12 +17,28 @@
 // -10^5 <= nums[i] <= 10^5
 // 0 <= i <= j < nums.length
 
+#include <stdio.h>
+#include <iostream>
+#include <string>
 #include <vector>
+using namespace std;
 class NumArray {
    public:
-    NumArray(vector<int>& nums) {}
+    vector<int> a;
+    NumArray(vector<int>& nums) {
+        a = nums;
+        for (int i = 1; i < a.size(); i++) {
+            a[i] = a[i - 1] + a[i];
+        }
+    }
 
-    int sumRange(int i, int j) {}
+    int sumRange(int i, int j) {
+        if (i == 0) {
+            return a[j];
+        } else {
+            return a[j] - a[i - 1];
+        }
+    }
 };
 
 /**
@@ -30,3 +46,9 @@ class NumArray {
  * NumArray* obj = new NumArray(nums);
  * int param_1 = obj->sumRange(i,j);
  */
+
+int main() {
+    vector<int> a = {1, 2, 3, 4};
+    NumArray A = NumArray(a);
+    cout << A.sumRange(1, 3) << endl;
+}
