@@ -20,6 +20,8 @@
 // Could you do it without using any loop / recursion?
 
 #include <stdio.h>
+#include <string>
+using namespace std;
 class Solution {
    public:
     bool isPowerOfThree(int n) {
@@ -37,4 +39,5 @@ class Solution {
 int main() {
     Solution A;
     printf("%d", A.isPowerOfThree(27));
+    system("Pause");
 }
