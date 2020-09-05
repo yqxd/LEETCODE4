@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include <iostream>
+#include <numeric>
 #include <string>
 #include <vector>
 using namespace std;
@@ -28,11 +29,14 @@ using namespace std;
 
 class NumArray {
    public:
-    NumArray(vector<int>& nums) {}
+    vector<int> MyNums;
+    NumArray(vector<int>& nums) { MyNums = nums; }
 
-    void update(int i, int val) {}
+    void update(int i, int val) { MyNums[i] = val; }
 
-    int sumRange(int i, int j) {}
+    int sumRange(int i, int j) {
+        return accumulate(MyNums.begin() + i, MyNums.begin() + j + 1, 0);
+    }
 };
 
 /**
@@ -41,3 +45,10 @@ class NumArray {
  * obj->update(i,val);
  * int param_2 = obj->sumRange(i,j);
  */
+
+int main() {
+    vector<int> B = {1, 2, 3, 4, 5};
+    NumArray A(B);
+    cout << A.sumRange(0, 1) << endl;
+    system("Pause");
+}

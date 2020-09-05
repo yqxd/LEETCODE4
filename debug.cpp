@@ -17,5 +17,6 @@ int main() {
     for (auto i : a) {
         cout << i << endl;
     }
+    vector<vector<int>> d(10);
     cout << 'i' << endl;
 }

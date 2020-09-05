@@ -26,6 +26,7 @@
 // Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally
 // is not allowed.
 
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstring>
@@ -36,5 +37,36 @@ using namespace std;
 
 class Solution {
    public:
-    int longestIncreasingPath(vector<vector<int>>& matrix) {}
+    int longestIncreasingPath(vector<vector<int>>& matrix) {
+        vector<vector<int>> d(matrix.size());
+        for (auto i : matrix) {
+            for (auto j : i) {
+                i.push_back(-1);
+            }
+        }
+        vector<int> result = findmin(matrix, d);
+        while (result[1] == -1) {
+        }
+    }
+    vector<int> findmin(vector<vector<int>> matrix, vector<vector<int>> d) {
+        vector<int> result = {10000, -1, -1};
+        for (int i = 0; i < matrix.size(); i++) {
+            for (int j = 0; j < matrix[0].size(); j++) {
+                if (d[i][j] == -1) {
+                    if (result[0] > matrix[i][j]) {
+                        result[0] = matrix[i][j];
+                        result[1] = i;
+                        result[2] = j;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    void alter(vector<vector<int>> matrix,
+               vector<vector<int>> d,
+               int i,
+               int j) {
+        if ()
+    }
 };
