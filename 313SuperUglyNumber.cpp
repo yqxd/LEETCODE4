@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <algorithm>
 #include <cstring>
 #include <iostream>
 #include <string>
@@ -27,5 +28,4 @@ using namespace std;
 class Solution {
    public:
     int nthSuperUglyNumber(int n, vector<int>& primes) {}
-    int Ret(vector<int> primes) {}
 };
